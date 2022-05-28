@@ -1,4 +1,5 @@
-all: 
+# all: volume_dir
+all:
 	@docker-compose -f ./srcs/docker-compose.yml up
 
 down:
@@ -23,9 +24,9 @@ volume_dir:
 	fi
 
 setup_domain:
-	@if ! grep -q -E '^127\.0\.0\.1\s+jtanaka.42.fr' /etc/hosts ; then \
-		echo "Add 127.0.0.1 to jtanaka.42.fr in /etc/hosts!"; \
-		sudo sh -c 'echo "127.0.0.1\tjtanaka.42.fr" >> /etc/hosts'; \
+	@if ! grep -q -E '^127\.0\.0\.1\s+sangcpar.42.fr' /etc/hosts ; then \
+		echo "Add 127.0.0.1 to sangcpar.42.fr in /etc/hosts!"; \
+		sudo sh -c 'echo "127.0.0.1\tsangcpar.42.fr" >> /etc/hosts'; \
 	fi
 
 .PHONY: all re down clean setup_domain volume_dir
